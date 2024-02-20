@@ -67,13 +67,14 @@ def run_simulation():
 
         pygame.display.flip()
 
+# draw all traffic light
 def draw_traffic_lights(ns_color, ew_color):
     one_set_of_light_horizontal(ew_color, WIDTH // 5, HEIGHT // 4 * 3)
     one_set_of_light_horizontal(ew_color, WIDTH // 5 * 4, HEIGHT // 4)
     one_set_of_light(ns_color, WIDTH // 4, HEIGHT // 5)
     one_set_of_light(ns_color, WIDTH // 4 * 3, HEIGHT // 5 * 4)
 
-
+# single traffic light vertical
 def one_set_of_light(color, x, y):
     x_ped = abs(200 - x) + 90
     y_ped = abs(100 - y) // 0.8 + 40
@@ -110,6 +111,7 @@ def one_set_of_light(color, x, y):
                          (x_ped-5, y_ped-5, 30, 30))
         screen.blit(ped_green_light, (x_ped, y_ped))
 
+# single traffic light horizontal
 def one_set_of_light_horizontal(color, x, y):
     x_ped = abs(100 - y) // 0.75 + 60
     y_ped = abs(200 - x) + 70
